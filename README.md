@@ -12,16 +12,26 @@ import { createEventEmmiter } from 'eeemiter'
 
 type MyEvents =
   | { type: 'foo'; payload: string }
-  | { type: 'bar'; payload: { foo: 'bar' } }
+  | { type: 'bar'; payload: { foo: 'lalala' } }
 
 const events = createEventEmmiter<MyEvents>()
 
 // register listener
-events.on('bar', (payload) => {
+const unsubscribe = events.on('bar', (payload) => {
   // payload type infered from event type
-  payload.foo // bar
+  payload.foo
 })
 
 // emit event, typesafe, autocompleted, payload is string...
 events.emit('foo', 'bar')
+
+// once: auto unsubscribes after first execution
+events.once('foo', s => s)
+
+// remove listeners by event type
+event.remove('bar')
+
+// clear all listeners
+event.clear()
 ```
+
