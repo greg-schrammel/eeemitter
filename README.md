@@ -6,6 +6,14 @@ yet another js event emmiter
 - 🥳 Typesafe
 - 📦 Zero deps
 
+```sh
+npm install eeemiter
+
+yarn add eeemiter
+
+pnpm add eeemiter
+```
+
 ### Usage
 
 ```ts
