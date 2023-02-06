@@ -1,6 +1,6 @@
 {
   "name": "eeemiter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/greg-schrammel/eeemiter.git"
@@ -16,7 +16,7 @@
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/eventEmmiter.d.ts",
   "scripts": {
     "build:types": "tsc --emitDeclarationOnly",
     "build": "vite build && pnpm run build:types"
