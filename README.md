@@ -1,7 +1,8 @@
-# eeemiter
+## eeemiter
 
 yet another js event emmiter
 
+- ✅ Super simple and small
 - 🥳 Typesafe
 - 📦 Zero deps
 
