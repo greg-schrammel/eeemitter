@@ -1,17 +1,17 @@
 ## eeemiter
 
-yet another js event emmiter
+yet another js event emitter
 
 - ✅ Super simple and small
 - 🥳 Typesafe
 - 📦 Zero deps
 
 ```sh
-npm install eeemiter
+npm install eeemitter
 
-yarn add eeemiter
+yarn add eeemitter
 
-pnpm add eeemiter
+pnpm add eeemitter
 ```
 
 ### Usage
