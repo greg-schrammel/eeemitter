@@ -1,4 +1,4 @@
-## eeemiter
+## eeemitter
 
 yet another js event emitter
 
