@@ -24,7 +24,7 @@ type SubscribeFunction<E extends Event> = <
   fn: Fn,
 ) => () => void
 
-export const createEventEmmiter = <E extends Event>() => {
+export const createEventEmitter = <E extends Event>() => {
   const listeners: Record<string, Set<(payload: E['payload']) => void>> = {}
 
   const on: SubscribeFunction<E> = (event, fn) => {

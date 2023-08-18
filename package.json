@@ -1,9 +1,9 @@
 {
-  "name": "eeemiter",
-  "version": "0.0.5",
+  "name": "eeemitter",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greg-schrammel/eeemiter.git"
+    "url": "https://github.com/greg-schrammel/eeemitter.git"
   },
   "author": {
     "name": "Greg Schrammel",
@@ -16,7 +16,7 @@
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/eventEmmiter.d.ts",
+  "types": "./dist/eventEmitter.d.ts",
   "scripts": {
     "build:types": "tsc --emitDeclarationOnly",
     "build": "vite build && pnpm run build:types"

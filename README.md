@@ -17,13 +17,11 @@ pnpm add eeemiter
 ### Usage
 
 ```ts
-import { createEventEmmiter } from 'eeemiter'
+import { createEventEmitter } from 'eeemitter'
 
-type MyEvents =
-  | { type: 'foo'; payload: string }
-  | { type: 'bar'; payload: { foo: 'lalala' } }
+type MyEvents = { type: 'foo'; payload: string } | { type: 'bar'; payload: { foo: 'lalala' } }
 
-const events = createEventEmmiter<MyEvents>()
+const events = createEventEmitter<MyEvents>()
 
 // register listener
 const unsubscribe = events.on('bar', (payload) => {
@@ -35,7 +33,7 @@ const unsubscribe = events.on('bar', (payload) => {
 events.emit('foo', 'bar')
 
 // once: auto unsubscribes after first execution
-events.once('foo', s => s)
+events.once('foo', (s) => s)
 
 // remove listeners by event type
 event.remove('bar')
@@ -43,4 +41,3 @@ event.remove('bar')
 // clear all listeners
 event.clear()
 ```
-
