@@ -5,11 +5,14 @@ type InferPayload<E extends Event, Type> = E extends {
   payload: infer A extends E['payload']
 }
   ? A
-  : never
+  : undefined
 
-type EmitFunction<E extends Event> = <T extends E['type'], Payload extends InferPayload<E, T>>(
+type EmitFunction<E extends Event> = <
+  T extends E['type'],
+  Payload extends InferPayload<E, T> extends undefined ? [payload?: never] : [payload: Payload],
+>(
   event: T,
-  ...payload: Payload extends undefined ? [undefined?] : [Payload]
+  ...args: Payload
 ) => void
 
 type SubscribeFunction<E extends Event> = <
@@ -40,7 +43,7 @@ export const createEventEmmiter = <E extends Event>() => {
     return unsubscribe
   }
 
-  const emit: EmitFunction<E> = (event, payload) => listeners[event]?.forEach((fn) => fn(payload))
+  const emit: EmitFunction<E> = (event, ...args) => listeners[event]?.forEach((fn) => fn(args[0]))
 
   const remove = (event: E['type']) => delete listeners[event]
 
